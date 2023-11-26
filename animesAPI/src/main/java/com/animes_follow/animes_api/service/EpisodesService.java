@@ -29,6 +29,16 @@ public class EpisodesService {
 	
 	private AuxiliaryFunctions axiliaryFunctions;
 	
+	private AnimesService animesService;
+	private UsersService usersService;
+	
+	public EpisodesService(AnimesService animesService, AuxiliaryFunctions axiliaryFunctions, UsersService usersService) {
+		this.animesService = animesService;
+		this.axiliaryFunctions = axiliaryFunctions;
+		this.usersService = usersService;
+	}
+	
+	
 	public Episodes addNew(Episodes newEpisode) throws Exception {
 		try {
 			if(axiliaryFunctions.isNull(newEpisode.getUserId())) {
@@ -65,26 +75,10 @@ public class EpisodesService {
 		return episodesRepository.findAll();
 	}
 
-
-
-	public List<Episodes> findLatest(String anime) {
-		return episodesRepository.latestEpisodesByAnimeName(anime);
-		
-	}
-	
 	public List<Episodes> findAllByName(String anime) throws Exception{
 		try {
-			Animes originalName =  animesRepository.findByOriginalNameLike(anime);			
-			if(!axiliaryFunctions.isNull(originalName)) {
-				return episodesRepository.findAllByAnimeId((long) originalName.getAnimeId());
-			}
-			
-			Animes englishName =  animesRepository.findByEnglishNameLike(anime);
-			if(!axiliaryFunctions.isNull(englishName)) {
-				return episodesRepository.findAllByAnimeId((long) englishName.getAnimeId());
-			}
-			return List.of();
-			
+			Long animeId = animesService.getAnimeIdByLikeName(anime);
+			return episodesRepository.findAllByAnimeId(animeId);			
 		}
 		catch(Exception ex) {
 			throw new Exception("Anime not Found");
@@ -95,17 +89,34 @@ public class EpisodesService {
 	
 	public Episodes findLatestByName(String anime) throws Exception{
 		try {
-			Animes originalName =  animesRepository.findByOriginalNameLike(anime);			
-			if(!axiliaryFunctions.isNull(originalName)) {
-				return episodesRepository.findFirstByAnimeId((long) originalName.getAnimeId());
-			}
+			Long animeId = animesService.getAnimeIdByLikeName(anime);
+			return episodesRepository.latestEpisodeWatchedByAnimeName(animeId).get(0);
+		}
+		catch(Exception ex) {
+			throw new Exception("Anime not Found");
 			
-			Animes englishName =  animesRepository.findByEnglishNameLike(anime);
-			if(!axiliaryFunctions.isNull(englishName)) {
-				return episodesRepository.findFirstByAnimeId((long) englishName.getAnimeId());
-			}
-			return null;
+		}	
+		
+	}
+	
+	public Episodes findFirstByName(String anime, String nickName) throws Exception{
+		try {
+			Long animeId = animesService.getAnimeIdByLikeName(anime);
+			Long userId = usersService.findUserId(nickName);
+			return episodesRepository.firstEpisodeWatchedByAnimeName(animeId, userId).get(0);			
+		}
+		catch(Exception ex) {
+			throw new Exception("Anime not Found");
 			
+		}	
+		
+	}
+	
+	public Episodes findLatestByNameAndUser(String anime, String nickName) throws Exception{
+		try {
+			Long animeId = animesService.getAnimeIdByLikeName(anime);
+			Long userId = usersService.findUserId(nickName);
+			return episodesRepository.latestEpisodeWatchedByAnimeNameAndUserId(animeId, userId).get(0);			
 		}
 		catch(Exception ex) {
 			throw new Exception("Anime not Found");

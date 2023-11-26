@@ -8,4 +8,6 @@ import com.animes_follow.animes_api.dto.*;
 @Repository
 public interface UsersRepository extends JpaRepository<Users,Long> {
 
+	Users findByNickName(String nickName);
+
 }

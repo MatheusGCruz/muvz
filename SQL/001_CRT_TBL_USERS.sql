@@ -1,9 +1,0 @@
-DROP TABLE IF EXISTS USERS
-
-CREATE TABLE USERS
-(
-    user_id INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-    nickname NVARCHAR(255),
-    user_name NVARCHAR(255),
-    registered_at DATETIME
-)

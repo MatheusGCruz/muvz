@@ -12,4 +12,8 @@ public interface AnimesRepository extends JpaRepository<Animes,Long> {
 
 	Animes findByEnglishNameLike(String anime);
 
+	Animes findByEnglishName(String animeName);
+
+	Animes findByOriginalName(String animeName);
+
 }
