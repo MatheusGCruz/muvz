@@ -32,29 +32,39 @@ Object: Anime
 -   Anime original name (romanji)
 -   Anime english name
 -   Anime image url
+-   Anime release year
+-   Register created at 
 
 Object: User
 -   User ID
 -   User NickName
 -   User Name
+-   Register created at 
+
 
 Object: Anime season
 -   Season ID
 -   Anime ID (foreign key)
+- 	Season Number
+-	Season Name
 -   Release Date
 -   Number of episodes
+-	Day of The Week (1 - Sunday, 7 - Saturday)
 -   Status (TBA, displaying, Halted, Canceled)
+-   Register created at 
+
 
 Object: Episode Watched
 -   Episode ID
 -   Anime ID (foreing key)
 -   User ID (foreing key)
 -   Status (fully or partially watched)
+-   Episode Score 
 -   TimeStamp (watched on)
 
 
 Infrastructure:
--   Backend language: Java17/Springboot3.1
+-   Backend language: Java 17/Springboot 3.2
 -   Database: MS SQL, azure hosted
 
 Endpoints:
