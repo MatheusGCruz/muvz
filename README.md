@@ -69,8 +69,8 @@ Infrastructure:
 
 Endpoints:
 * Object: Anime
-Json:
-{
+<br/>Json:
+<br/>{
 <br/>	(Integer) animeId, // Auto generated at insertion
 <br/>	(String) originalName,
 <br/>	(String) englishName,
@@ -80,6 +80,7 @@ Json:
 <br/>}
 <br/>
 <br/>Endpoints:
+<br/>
 /animes/all
 - Get a list of all animes
 
@@ -87,8 +88,8 @@ Json:
 - Add a new anime
 
 * Object: User
-Json:
-{
+<br/>Json:
+<br/>{
 <br/>	(Integer) userId, 			// Auto generated at insertion
 <br/>	(String) nickName,			// Verified to avoid duplication
 <br/>	(String) userName,
@@ -103,8 +104,8 @@ Json:
 - Add a new user
 
 * Object: Season
-Json:
-{	
+<br/>Json:
+<br/>{	
 <br/>	(Integer) seasonId, 		// Auto generated at insertion
 <br/>	(Integer) animeId,			// Verified to avoid inserting a item without a correspondent
 <br/>	(Integer) seasonNumber,
@@ -127,8 +128,8 @@ Json:
 - Get a lista of seasons by a specific anime ID
 
 * Object: Episode
-Json:
-{
+<br/>Json:
+<br/>{
 <br/>	(Integer) episodeId, 		// Auto generated at insertion
 <br/>	(Integer) animeId,			// Verified to avoid inserting a item without a correspondent 
 <br/>	(Integer) seasonId,			// Verified to avoid inserting a item without a correspondent 
