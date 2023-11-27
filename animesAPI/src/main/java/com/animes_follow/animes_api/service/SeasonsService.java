@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.animes_follow.animes_api.dto.Animes;
@@ -22,11 +21,11 @@ public class SeasonsService {
 	@Autowired
 	private AnimesRepository animesRepository;
 	
-	public Seasons addNewSeason(Seasons newSeason) {
+	public Seasons addNewSeason(Seasons newSeason) throws Exception {
 		Optional<Animes> targetAnime = animesRepository.findById((long) newSeason.getAnimeId());
 		
 		if(targetAnime.isEmpty()) {
-			//throw ApiException("Anime Id does not exists.", HttpStatus.BAD_REQUEST);
+			throw new Exception ("Anime not found");
 		}
 		
 		newSeason.setRegisteredAt(LocalDateTime.now());
