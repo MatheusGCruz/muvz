@@ -71,12 +71,12 @@ Endpoints:
 * Object: Anime
 Json:
 {
-	(Integer) animeId, // Auto generated at insertion
-	(String) originalName,
-	(String) englishName,
-	(String) imageUrl,
-	(Integer) releaseYear,
-	(DateTime) registeredAt // Auto generated at insertion
+<br/>	(Integer) animeId, // Auto generated at insertion
+<br/>	(String) originalName,
+<br/>	(String) englishName,
+<br/>	(String) imageUrl,
+<br/>	(Integer) releaseYear,
+<br/>	(DateTime) registeredAt // Auto generated at insertion
 }
 Endpoints:
 /animes/all
@@ -88,10 +88,10 @@ Endpoints:
 * Object: User
 Json:
 {
-	(Integer) userId, 			// Auto generated at insertion
-	(String) nickName,			// Verified to avoid duplication
-	(String) userName,
-	(DateTime) registeredAt 	// Auto generated at insertion
+<br/>	(Integer) userId, 			// Auto generated at insertion
+<br/>	(String) nickName,			// Verified to avoid duplication
+<br/>	(String) userName,
+<br/>	(DateTime) registeredAt 	// Auto generated at insertion
 }
 Endpoints:
 /users/all
@@ -103,15 +103,15 @@ Endpoints:
 * Object: Season
 Json:
 {	
-	(Integer) seasonId, 		// Auto generated at insertion
-	(Integer) animeId,			// Verified to avoid inserting a item without a correspondent
-	(Integer) seasonNumber,
-	(String) seasonName,
-	(DateTime) releaseDate,
-	(Integer) numberOfEpisodes,
-	(Integer) dayOfTheWeek,
-	(Integer) seasonStatus,
-	(DateTime) registeredAt 	// Auto generated at insertion
+<br/>	(Integer) seasonId, 		// Auto generated at insertion
+<br/>	(Integer) animeId,			// Verified to avoid inserting a item without a correspondent
+<br/>	(Integer) seasonNumber,
+<br/>	(String) seasonName,
+<br/>	(DateTime) releaseDate,
+<br/>	(Integer) numberOfEpisodes,
+<br/>	(Integer) dayOfTheWeek,
+<br/>	(Integer) seasonStatus,
+<br/>	(DateTime) registeredAt 	// Auto generated at insertion
 }
 Endpoints:
 /seasons/all
@@ -126,14 +126,14 @@ Endpoints:
 * Object: Episode
 Json:
 {
-	(Integer) episodeId, 		// Auto generated at insertion
-	(Integer) animeId,			// Verified to avoid inserting a item without a correspondent 
-	(Integer) seasonId,			// Verified to avoid inserting a item without a correspondent 
-	(Integer) userId,			// Verified to avoid inserting a item without a correspondent 
-	(Integer) episodeNumber,
-	(Integer) episodeStatus,
-	(Integer) episodeScore,
-	(DateTime) registeredAt 	// Auto generated at insertion
+<br/>	(Integer) episodeId, 		// Auto generated at insertion
+<br/>	(Integer) animeId,			// Verified to avoid inserting a item without a correspondent 
+<br/>	(Integer) seasonId,			// Verified to avoid inserting a item without a correspondent 
+<br/>	(Integer) userId,			// Verified to avoid inserting a item without a correspondent 
+<br/>	(Integer) episodeNumber,
+<br/>	(Integer) episodeStatus,
+<br/>	(Integer) episodeScore,
+<br/>	(DateTime) registeredAt 	// Auto generated at insertion
 }
 Endpoints:
 /episodes/all
