@@ -81,11 +81,8 @@ Endpoints:
 <br/>
 <br/>Endpoints:
 <br/>
-/animes/all
-- Get a list of all animes
-
-/animes/addNew
-- Add a new anime
+/animes/all - Get a list of all animes
+/animes/addNew - Add a new anime
 
 * Object: User
 <br/>Json:
@@ -97,11 +94,8 @@ Endpoints:
 <br/>}
 <br/>
 <br/>Endpoints:
-/users/all
-- Get a list of all users
-
-/users/addNew
-- Add a new user
+/users/all - Get a list of all users
+/users/addNew - Add a new user
 
 * Object: Season
 <br/>Json:
@@ -118,14 +112,9 @@ Endpoints:
 <br/>}
 <br/>
 <br/>Endpoints:
-/seasons/all
-- Get a list of all seasons
-
-/seasons/addNew
-- Add a new season item
-
-/seasons/anime/{id}
-- Get a lista of seasons by a specific anime ID
+/seasons/all - Get a list of all seasons
+/seasons/addNew - Add a new season item
+/seasons/anime/{id} - Get a lista of seasons by a specific anime ID
 
 * Object: Episode
 <br/>Json:
@@ -141,20 +130,9 @@ Endpoints:
 <br/>}
 <br/>
 <br/>Endpoints:
-/episodes/all
-- Get a list of all watched episodes, by all users and animes
-
-/episodes/addNew
-- Add a new episode item
-
-/episodes/latest/{anime}
-- Get the last resgister of an episode watched, where the anime original name or english name contains the {anime} value
-
-/episodes/latest/{nickName}/{anime}
-- Get the last resgister of an episode watched, where the anime original name or english name contains the {anime} value, and the user registered matches exactly with the {nickName} provided
-
-/episodes/first/{nickName}/{anime}
-- Get the first episode watched, where the anime original name or english name contains the {anime} value, and the user registered matches exactly with the {nickName} provided
-
-/episodes/all/{anime}
-- Get a list of all watched episodes, where the anime original name or english name contains the {anime} value
+/episodes/all - Get a list of all watched episodes, by all users and animes
+/episodes/addNew - Add a new episode item
+/episodes/latest/{anime} - Get the last resgister of an episode watched, where the anime original name or english name contains the {anime} value
+/episodes/latest/{nickName}/{anime} - Get the last resgister of an episode watched, where the anime original name or english name contains the {anime} value, and the user registered matches exactly with the {nickName} provided
+/episodes/first/{nickName}/{anime} - Get the first episode watched, where the anime original name or english name contains the {anime} value, and the user registered matches exactly with the {nickName} provided
+/episodes/all/{anime} - Get a list of all watched episodes, where the anime original name or english name contains the {anime} value
