@@ -69,7 +69,7 @@ Infrastructure:
 
 
 Final data organization
-<br/>Endpoints:
+<br/>
 <br/>* Object: Anime
 <br/>Json:
 <br/>{
@@ -80,9 +80,7 @@ Final data organization
 <br/>	(Integer) releaseYear,
 <br/>	(DateTime) registeredAt // Auto generated at insertion
 <br/>}
-<br/>
 <br/>Endpoints:
-<br/>
 <br/>/animes/all - Get a list of all animes
 <br/>/animes/addNew - Add a new anime
 <br/>
@@ -94,7 +92,6 @@ Final data organization
 <br/>	(String) userName,
 <br/>	(DateTime) registeredAt 	// Auto generated at insertion
 <br/>}
-<br/>
 <br/>Endpoints:
 <br/>/users/all - Get a list of all users
 <br/>/users/addNew - Add a new user
@@ -112,7 +109,6 @@ Final data organization
 <br/>	(Integer) seasonStatus,
 <br/>	(DateTime) registeredAt 	// Auto generated at insertion
 <br/>}
-<br/>
 <br/>Endpoints:
 <br/>/seasons/all - Get a list of all seasons
 <br/>/seasons/addNew - Add a new season item
@@ -130,7 +126,6 @@ Final data organization
 <br/>	(Integer) episodeScore,
 <br/>	(DateTime) registeredAt 	// Auto generated at insertion
 <br/>}
-<br/>
 <br/>Endpoints:
 <br/>/episodes/all - Get a list of all watched episodes, by all users and animes
 <br/>/episodes/addNew - Add a new episode item
