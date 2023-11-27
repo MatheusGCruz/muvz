@@ -77,8 +77,9 @@ Json:
 <br/>	(String) imageUrl,
 <br/>	(Integer) releaseYear,
 <br/>	(DateTime) registeredAt // Auto generated at insertion
-}
-Endpoints:
+<br/>}
+<br/>
+<br/>Endpoints:
 /animes/all
 - Get a list of all animes
 
@@ -92,8 +93,9 @@ Json:
 <br/>	(String) nickName,			// Verified to avoid duplication
 <br/>	(String) userName,
 <br/>	(DateTime) registeredAt 	// Auto generated at insertion
-}
-Endpoints:
+<br/>}
+<br/>
+<br/>Endpoints:
 /users/all
 - Get a list of all users
 
@@ -112,8 +114,9 @@ Json:
 <br/>	(Integer) dayOfTheWeek,
 <br/>	(Integer) seasonStatus,
 <br/>	(DateTime) registeredAt 	// Auto generated at insertion
-}
-Endpoints:
+<br/>}
+<br/>
+<br/>Endpoints:
 /seasons/all
 - Get a list of all seasons
 
@@ -134,8 +137,9 @@ Json:
 <br/>	(Integer) episodeStatus,
 <br/>	(Integer) episodeScore,
 <br/>	(DateTime) registeredAt 	// Auto generated at insertion
-}
-Endpoints:
+<br/>}
+<br/>
+<br/>Endpoints:
 /episodes/all
 - Get a list of all watched episodes, by all users and animes
 
