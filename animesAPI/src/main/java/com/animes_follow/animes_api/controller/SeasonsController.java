@@ -1,25 +1,9 @@
 package com.animes_follow.animes_api.controller;
 
-import java.io.Console;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
-
 import com.animes_follow.animes_api.dto.Seasons;
-import com.animes_follow.animes_api.dto.Users;
-import com.animes_follow.animes_api.repository.UsersRepository;
 import com.animes_follow.animes_api.service.SeasonsService;
-import com.animes_follow.animes_api.service.UsersService;
-
 import jakarta.servlet.http.HttpServletResponse;
 
 
@@ -46,8 +30,13 @@ public class SeasonsController {
 	}
 	
 	@PostMapping("/addNew")
-	public Seasons addNewSeason(@RequestBody Seasons newSeason, HttpServletResponse response){
-		return service.addNewSeason(newSeason);
+	public Seasons addNewSeason(@RequestBody Seasons newSeason, HttpServletResponse response) throws Exception{
+		try {
+			return service.addNewSeason(newSeason);
+		} catch (Exception ex) {    
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getLocalizedMessage() );			
+			return null;
+		}		
 	}
 	
 }
