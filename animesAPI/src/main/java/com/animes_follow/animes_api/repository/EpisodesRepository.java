@@ -12,9 +12,6 @@ import com.animes_follow.animes_api.dto.*;
 @Repository
 public interface EpisodesRepository extends JpaRepository<Episodes,Long> {
 
-	@Query("SELECT ep FROM Episodes ep ")
-	List<Episodes> latestEpisodesByAnimeName(@Param("animeName") String animeName);
-
 	List<Episodes> findAllByAnimeId(long l);
 
 	Episodes findFirstByAnimeId(long animeId);
